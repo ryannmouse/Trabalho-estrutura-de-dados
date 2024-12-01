@@ -13,7 +13,7 @@ class Vazia(Exception):
 
 
 
-# alguma coisa ai
+# arthur viado
 
 class PilhaArray:
   ''' Implementação de pilha LIFO usando uma lista Python como armazenamento subjacente'''
