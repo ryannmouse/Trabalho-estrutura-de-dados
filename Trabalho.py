@@ -41,7 +41,16 @@ class PilhaArray:
   def _str_(self):
     ''' Uma representação em string da pilha'''
     return ''.join(str(self._dados)) + '>'
+  
+  def imprimir(self):
+   print(self._dados)
+ 
+  def imprimir_reversa(self):
+    print(self._dados[::-1])
 
+  def liberar(self):
+    pass
+ 
 ## Questão 4
 
 
