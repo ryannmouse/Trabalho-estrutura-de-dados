@@ -10,7 +10,7 @@ class Vazia(Exception):
 class PilhaArray:
   ''' Implementação de pilha LIFO usando uma lista Python como armazenamento subjacente'''
 
-  def _init_(self):
+  def __init__(self):
     ''' cria uma pilha vazia'''
     self._dados = []    # instância de lista não pública
 
