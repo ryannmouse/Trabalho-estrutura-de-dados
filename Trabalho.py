@@ -27,28 +27,19 @@ class PilhaArray:
     self._dados.append(e)  # novo item armazenado no final da lista
   
   def top(self):
-    ''' 
-    Retorna o elemento no topo da pilha
-    Levanta a exceção Vazia se a pilha estiver vazia
-    '''
+    ''' Retorna o elemento no topo da pilha'''
     if self.esta_vazia():
       raise Vazia('A pilha está vazia')
     return self._dados[-1]  # o último item na lista
 
   def pop(self):
-    ''' 
-    Remove e retorna o elemento do topo da pilha 
-    Levanta a exceção Vazia se a pilha estiver vazia
-    '''
+    ''' Remove e retorna o elemento do topo da pilha'''
     if self.esta_vazia():
       raise Vazia('A pilha está vazia')
     return self._dados.pop()
 
   def _str_(self):
-    ''' 
-    Uma representação em string da pilha
-    Uma seta mostra o topo da pilha
-    '''
+    ''' Uma representação em string da pilha'''
     return ''.join(str(self._dados)) + '>'
 
 ## Questão 4
