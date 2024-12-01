@@ -7,6 +7,14 @@ class Vazia(Exception):
   ''' Erro ao tentar acessar um elemento de um contêiner vazio.'''
   pass
 
+
+
+
+
+
+
+# alguma coisa ai
+
 class PilhaArray:
   ''' Implementação de pilha LIFO usando uma lista Python como armazenamento subjacente'''
 
