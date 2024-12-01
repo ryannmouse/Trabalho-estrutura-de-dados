@@ -50,9 +50,58 @@ class PilhaArray:
 
   def liberar(self):
     pass
+
+  def palindromo(self):
+    if self._dados == self._dados[::-1]:
+      return True
+    else:
+      return False
+    
+  def elimina(self, elemento):
+    elementos_de_cima = []
+    achou = False
+    for _ in range(len(self._dados)):
+      elemento_atual = self._dados.pop()
+      elementos_de_cima.append(elemento_atual)
+      if elemento_atual == elemento:
+        achou = True
+        break
+
+    if not achou:
+      raise ValueError('Elemento não encontrado')
+
+    for elemento in elementos_de_cima[1:]:
+      self.push(elemento)
+
+  def pares_e_impares(self):
+    # pedir os números para o usuário
+    args = []
+    while True:
+      try:
+        num = int(input('Digite um número inteiro positivo (0 para parar): '))
+        if num <= 0:
+          break
+        args.append(num)
+      except ValueError:
+        print('Digite um número inteiro válido!')
+
+    pilha = PilhaArray()
+    for arg in args:
+      pilha.push(arg)
+
+    pares = PilhaArray()
+    impares = PilhaArray()
+    for num in pilha._dados:
+      if num % 2 == 0:
+        pares.push(num)
+      else:
+        impares.push(num)
+    return pares, impares
+  
  
 ## Questão 4
-
-
-
-
+p, i = PilhaArray().pares_e_impares(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+print('Pares:')
+p.imprimir()
+print('Ímpares:')
+i.imprimir()
