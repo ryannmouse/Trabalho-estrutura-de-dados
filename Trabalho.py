@@ -26,7 +26,7 @@ class PilhaArray:
     ''' Adiciona o elemento e ao topo da pilha'''
     self._dados.append(e)  # novo item armazenado no final da lista
   
-  def topo(self):
+  def top(self):
     ''' 
     Retorna o elemento no topo da pilha
     Levanta a exceção Vazia se a pilha estiver vazia
