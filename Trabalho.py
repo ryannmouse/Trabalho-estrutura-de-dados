@@ -75,19 +75,16 @@ class PilhaArray:
 
   def pares_e_impares(self):
     # pedir os números para o usuário
-    args = []
+    pilha = PilhaArray()
+
     while True:
       try:
         num = int(input('Digite um número inteiro positivo (0 para parar): '))
         if num <= 0:
           break
-        args.append(num)
+        pilha.push(num)
       except ValueError:
         print('Digite um número inteiro válido!')
-
-    pilha = PilhaArray()
-    for arg in args:
-      pilha.push(arg)
 
     pares = PilhaArray()
     impares = PilhaArray()
