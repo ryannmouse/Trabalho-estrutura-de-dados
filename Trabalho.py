@@ -43,10 +43,11 @@ class PilhaArray:
     return ''.join(str(self._dados)) + '>'
   
   def imprimir(self):
-   print(self._dados)
+   print(self._str_())
  
   def imprimir_reversa(self):
-    print(self._dados[::-1])
+    reverso = '<' + ''.join(str(self._dados[::-1]))
+    print(reverso)
 
   def liberar(self):
     pass
@@ -95,10 +96,19 @@ class PilhaArray:
         impares.push(num)
     return pares, impares
   
- 
+
+  
 ## Questão 4
-p, i = PilhaArray().pares_e_impares(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-print('Pares:')
-p.imprimir()
-print('Ímpares:')
-i.imprimir()
+# p, i = PilhaArray().pares_e_impares(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+# print('Pares:')
+# p.imprimir()
+# print('Ímpares:')
+# i.imprimir()
+pilha = PilhaArray()
+pilha.push(1)
+pilha.push(2)
+pilha.push(3)
+pilha.push(4)
+pilha.push(5)
+pilha.imprimir()
+pilha.imprimir_reversa()
