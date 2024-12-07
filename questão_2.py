@@ -18,7 +18,7 @@ class PilhaArray:
     ''' retorna o número de elementos na pilha'''
     return len(self._dados)
 
-  def lista_vazia(self):
+  def esta_vazia(self):
     ''' Retorna True se a pilha estiver vazia'''
     return len(self._dados) == 0
 
