@@ -14,56 +14,56 @@ class PilhaArray:
     '''Cria uma pilha vazia'''
     self._dados = []    # instância de lista não pública
 
-  def _len_(self):
+  def _len_(self): ## Complexidade O(1)
     '''Retorna o número de elementos na pilha'''
     return len(self._dados)
 
-  def esta_vazia(self):
+  def esta_vazia(self): ## Complexidade O(1)
     '''Retorna True se a pilha estiver vazia'''
     return len(self._dados) == 0
 
-  def push(self, e):
+  def push(self, e): ## Complexidade O(1)
     '''Adiciona o elemento e ao topo da pilha'''
     self._dados.append(e)  # novo item armazenado no final da lista
   
-  def top(self):
+  def top(self): ## Complexidade O(1)
     '''Retorna o elemento no topo da pilha'''
     if self.esta_vazia():
       raise Vazia('A pilha está vazia')
     return self._dados[-1]  # o último item na lista
 
-  def pop(self):
+  def pop(self): ## Complexidade O(1)
     '''Remove e retorna o elemento do topo da pilha'''
     if self.esta_vazia():
       raise Vazia('A pilha está vazia')
     return self._dados.pop()
 
-  def _str_(self):
+  def _str_(self): ## Complexidade O(n)
     '''Uma representação em string da pilha'''
     return ''.join(str(self._dados)) + '>'
   
-  def imprimir(self):
+  def imprimir(self): ## Complexidade O(n)
    '''Imprime a pilha'''
    print(self._str_())
  
-  def imprimir_reversa(self):
+  def imprimir_reversa(self): ## Complexidade O(n)
     '''Imprime a pilha de forma reversa'''
     reverso = '<' + ''.join(str(self._dados[::-1]))
     print(reverso)
 
-  def liberar(self):
+  def liberar(self): ## Complexidade O(n)
     '''Remove todos os elementos da pilha'''
     for _ in range(len(self._dados)):
       self._dados.pop()
 
-  def palindromo(self):
+  def palindromo(self): ## Complexidade O(n)
     '''Verifica se a pilha é um palíndromo'''
     if self._dados == self._dados[::-1]:
       return True
     else:
       return False
     
-  def elimina(self, elemento):
+  def elimina(self, elemento): ## Complexidade O(n)
     '''Remove um elemento da pilha'''
     elementos_de_cima = []
     achou = False
@@ -80,7 +80,7 @@ class PilhaArray:
     for elemento in elementos_de_cima[1:]:
       self.push(elemento)
 
-  def pares_e_impares(self):
+  def pares_e_impares(self): ## Complexidade O(n)
     '''Separa os números pares e ímpares em duas pilhas diferentes'''
     # pedir os números para o usuário
     pilha = PilhaArray()

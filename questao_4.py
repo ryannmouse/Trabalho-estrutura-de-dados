@@ -1,5 +1,5 @@
 ## Questão 4 
-from questão_2 import PilhaArray
+from questao_2 import PilhaArray
 import time
 ## Questão 4
 # p, i = PilhaArray().pares_e_impares(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
@@ -7,18 +7,32 @@ import time
 # p.imprimir()
 # print('Ímpares:')
 # i.imprimir()
+
 pilha = PilhaArray()
 
-
-
-start_time = time.time()
-
 # Código para testar
-for i in range(10_000_000):
+for i in range(1_000_000):
     pilha.push(i)
     
-pilha.elimina(456977)
+	
+start_time = time.time()
 
-end_time = time.time()
+# Configurar cada teste com time
+print("Testando liberar()")
+tempo_liberar = time.time()
+print(f"Tempo de execução da liberar(): {tempo_liberar - start_time}")
 
-print(f"Tempo de execução: {end_time - start_time} segundos")
+print("\nTestando palindromo()")
+pilha.palindromo()
+tempo_palindromo = time.time()
+print(f"Tempo de execução da palindromo(): { tempo_palindromo - tempo_liberar }")
+
+print("\nTestando elimina()")
+tempo_elimina = time.time()
+print(f"Tempo de execução da elimina(): { tempo_elimina -tempo_palindromo }")
+
+print("\nTestando imprimir_reversa()")
+pilha.imprimir_reversa()
+tempo_imprimir_reversa = time.time()
+print(f"Tempo de execução da imprimir_reversa(): {tempo_imprimir_reversa - tempo_elimina}")
+
