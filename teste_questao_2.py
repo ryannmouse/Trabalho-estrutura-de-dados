@@ -36,3 +36,4 @@ pilha.imprimir_reversa()
 tempo_imprimir_reversa = time.time()
 print(f"Tempo de execução da imprimir_reversa(): {tempo_imprimir_reversa - tempo_elimina}")
 
+
