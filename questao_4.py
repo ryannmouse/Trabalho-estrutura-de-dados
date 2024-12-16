@@ -4,18 +4,18 @@ from questao_2 import PilhaArray
 
 def valida_expressao(expressao):
     '''Verifica se a expressão matemática é válida'''
-    pilha = PilhaArray()
+    pilha = PilhaArray()  # Inicializa uma pilha vazia
     for caractere in expressao:
         if caractere in '({[':
-            pilha.push(caractere)
+            pilha.push(caractere)   # Empilha os caracteres de abertura     
         elif caractere in ')}]':
-            if pilha.esta_vazia():
+            if pilha.esta_vazia():  # Se a pilha estiver vazia, a expressão é inválida
                 return False
-            topo = pilha.pop()
+            topo = pilha.pop()      # Caso contrário, desempilha o último caractere
             if (topo == '(' and caractere != ')') or \
                 (topo == '[' and caractere != ']') or \
                 (topo == '{' and caractere != '}'):
-                return False
+                return False        # Se os caracteres não forem correspondentes, a expressão é inválida
             
     return pilha.esta_vazia() # Se a pilha terminar vazia, a expressão é válida
 

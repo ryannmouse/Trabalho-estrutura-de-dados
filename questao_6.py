@@ -1,7 +1,7 @@
 ## Questão 6
 
 class Empty(Exception):
-  ''' Error attempting to access an element from an empty container.'''
+  ''' Erro ao tentar acessar um elemento de um contêiner vazio.'''
   pass
 #---------------------------------------------
 class StaticCircularQueue:
@@ -11,59 +11,59 @@ class StaticCircularQueue:
   '''
   #--------------------- nested _Node Class ------------------
   class _Node:
-    ''' Lightweight, nonpublic class for storing a singly linked node'''
+    ''' Classe leve e não pública para armazenar um nó encadeado individual'''
     _slots_ = ['_element', '_next']
 
     def __init__(self, element, next):      
       self._element = element               
       self._next = next                      
-  # -------------------Queue Methods-----------------------------------
+  # -------------------Métodos da Fila------------------------
 
   def __init__(self, size):
-    ''' Create an empty queue'''
-    self._tail = None         # represents tail of the queue
-    self._size = size         # queue static size
-    self._len = 0             # numero de elementos na fila
+    ''' Cria uma fila vazia'''
+    self._tail = None         # representa a cauda da fila
+    self._size = size         # tamanho estático da fila
+    self._len = 0             # número de elementos na fila
 
   def is_empty(self):
-    ''' Return True if the queue is empty'''
+    ''' Retorna True se a fila estiver vazia'''
     return self._len == 0
 
   def is_full(self):
-    ''' Return True if the queue is full'''
+    ''' Retorna True se a fila estiver cheia'''
     return self._size == self._len
 
   def enqueue(self, e):
-    ''' Add an element to the back of the queue'''
-    newest = self._Node(e, None)    # new node will be the new tail node
+    ''' Adiciona um elemento ao final da fila'''
+    newest = self._Node(e, None)        # novo nó será o novo nó da cauda
     if self.is_full():
       self._size *= 2
     if self.is_empty():
-      newest._next = newest         # initialize circularly
-      self._tail = newest            # the tail is the only node
+      newest._next = newest             # inicializa circularmente
+      self._tail = newest               # a cauda é o único nó
     else:
-      newest._next = self._tail._next # new node points to head
-      self._tail._next = newest       # old tail points to new node
-    self._tail = newest             #  new nodes becomes the tail
+      newest._next = self._tail._next   # novo nó aponta para a cabeça
+      self._tail._next = newest         # antiga cauda aponta para o novo nó
+    self._tail = newest                 # novo nó se torna a cauda
     self._len += 1
 
   def dequeue(self):
     ''' 
-    Remove and return the first element of the queue (FIFO)
-    Raise Empty exception if the queue is empty
+    Remove e retorna o primeiro elemento da fila (FIFO)
+    Levanta uma exceção Empty se a fila estiver vazia
     '''
     if self.is_empty():
       raise Empty('Queue is empty')
-    oldhead = self._tail._next      # element is removed from the head
-    if self._len == 1:             # removing the only element
-      self._tail = None             # queue becomes empty
+    oldhead = self._tail._next      # elemento é removido da cabeça
+    if self._len == 1:              # removendo o único elemento
+      self._tail = None             # fila se torna vazia
     else:
-      self._tail._next = oldhead._next # bypass old head
+      self._tail._next = oldhead._next  # ignora a antiga cabeça
     self._len -= 1
     return oldhead._element         
 
   def _str_(self):
-    '''String representation of the queue'''
+    '''Representação em string da fila'''
     arr = ''
     start = self._tail._next
     for i in range(self._len):
