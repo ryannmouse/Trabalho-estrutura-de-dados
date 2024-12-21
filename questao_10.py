@@ -12,7 +12,7 @@ class DequeDinamica:
         self.inicio = None  
         self.fim = None     
         
-    def deque_e_vazia(self):
+    def deque_e_vazia(self): ## Complexidade O(1)
         return self.inicio is None
 
     def insere_inicio_deque(self, valor):
@@ -35,7 +35,7 @@ class DequeDinamica:
             self.fim.proximo = newest       
             self.fim = newest              
 
-    def remove_inicio_deque(self):
+    def remove_inicio_deque(self): ## Complexidade O(1)
         '''Remove primeiro valor da Deque'''
         if self.deque_e_vazia():
             raise IndexError("Deque está vazio!")
@@ -47,7 +47,7 @@ class DequeDinamica:
             self.inicio.anterior = None        
         return valor
 
-    def remove_final_deque(self):
+    def remove_final_deque(self): ## Complexidade O(1)
         '''Remove ultimo valor da Deque'''
         if self.deque_e_vazia():
             raise IndexError("Deque está vazio!")
@@ -59,7 +59,7 @@ class DequeDinamica:
             self.fim.proximo = None          
         return valor
 
-    def imprimir(self):
+    def imprimir(self): ## Complexidade O(n)
         '''Imprime os valores da deque'''
         if self.deque_e_vazia():
             print("Deque está vazio!") ## Caso a deque esteja vazia, imprime uma mesagem
