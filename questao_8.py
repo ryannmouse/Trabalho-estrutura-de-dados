@@ -22,10 +22,10 @@ class ListaDuplamenteEncadeada:
     
     def insert(self, valor, posicao):
         '''Adiciona elemento em determinada posição.'''
-        if posicao <= 0:  # Bota no começo da lista
+        if posicao <= 0:  # Insere no começo da lista
             newest = Node(valor, proximo=self.cabeca)
             self.cabeca.anterior = newest
-        elif posicao < self.tamanho: # Bota no meio da lista
+        elif posicao < self.tamanho: # Insere no meio da lista
             cont = 0
             anterior = self.cabeca
             # Determinando o anterior do newest
