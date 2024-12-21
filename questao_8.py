@@ -20,13 +20,25 @@ class ListaDuplamenteEncadeada:
         '''Retorna True se a lista estiver vazia.'''
         return self.tamanho == 0  # Verifica se a lista está vazia
     
-    def insert_between(self, e, predecessor=None, sucessor=None):
-        '''Add element e between two existing nodes and return new node.'''
-        newest = Node(e, predecessor, sucessor) # linked to neighbors
-        newest = predecessor.proximo 
-        newest = sucessor.anterior 
-        self.tamanho += 1
-        return newest
+    def insert(self, valor, posicao):
+        '''Adiciona elemento em determinada posição.'''
+        if posicao <= 0:  # Bota no começo da lista
+            newest = Node(valor, proximo=self.cabeca)
+            self.cabeca.anterior = newest
+        elif posicao < self.tamanho: # Bota no meio da lista
+            cont = 0
+            anterior = self.cabeca
+            # Determinando o anterior do newest
+            while cont + 1 < posicao:
+                anterior = anterior.proximo
+            # O proximo do newest será o proximo do anterior
+            proximo = anterior.proximo
+            newest = Node(valor, anterior, proximo)
+            anterior.proximo = newest
+            proximo.anterior = newest
+        else:  # Bota no final da lista
+            newest = Node(valor, anterior=self.cauda)
+            self.cauda.proximo = newest
         
     def Dequeue(self, valor):  ## Complexidade O(n)
         '''Remove a primeira ocorrência de um valor na lista.'''
