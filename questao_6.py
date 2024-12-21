@@ -25,15 +25,15 @@ class StaticCircularQueue:
     self._size = size         # tamanho estático da fila
     self._len = 0             # número de elementos na fila
 
-  def is_empty(self):
+  def is_empty(self):  # Complexidade O(1)
     ''' Retorna True se a fila estiver vazia'''
     return self._len == 0
 
-  def is_full(self):
+  def is_full(self):  # Complexidade O(1)
     ''' Retorna True se a fila estiver cheia'''
     return self._size == self._len
 
-  def enqueue(self, e):
+  def enqueue(self, e):  # Complexidade O(1)
     ''' Adiciona um elemento ao final da fila'''
     newest = self._Node(e, None)        # novo nó será o novo nó da cauda
     if self.is_full():
@@ -47,7 +47,7 @@ class StaticCircularQueue:
     self._tail = newest                 # novo nó se torna a cauda
     self._len += 1
 
-  def dequeue(self):
+  def dequeue(self):  # Complexidade O(1)
     ''' 
     Remove e retorna o primeiro elemento da fila (FIFO)
     Levanta uma exceção Empty se a fila estiver vazia
@@ -62,7 +62,7 @@ class StaticCircularQueue:
     self._len -= 1
     return oldhead._element         
 
-  def _str_(self):
+  def _str_(self):  # Complexidade O(n)
     '''Representação em string da fila'''
     arr = ''
     start = self._tail._next               # começa na cabeça da fila
