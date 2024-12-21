@@ -15,7 +15,7 @@ class DequeDinamica:
     def deque_e_vazia(self): ## Complexidade O(1)
         return self.inicio is None
 
-    def insere_inicio_deque(self, valor):
+    def insere_inicio_deque(self, valor): ## Complexidade O(1)
         '''Insere um valor no inicio da Deque'''
         newest = Node(valor)
         if self.deque_e_vazia():
@@ -25,7 +25,7 @@ class DequeDinamica:
             self.inicio.anterior = newest   
             self.inicio = newest            
 
-    def insere_final_deque(self, valor):
+    def insere_final_deque(self, valor):    ## Complexidade O(1)
         '''Insere um valor no final da Deque'''
         newest = Node(valor)
         if self.deque_e_vazia():
