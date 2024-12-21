@@ -16,7 +16,7 @@ class DequeDinamica:
         return self.inicio is None
 
     def insere_inicio_deque(self, valor):
-        '''Função inserir no inicio'''
+        '''Insere um valor no inicio da Deque'''
         newest = Node(valor)
         if self.deque_e_vazia():
             self.inicio = self.fim = newest  ## Caso seja o primeiro valor inserido, define fim e inicio como newest  
@@ -26,6 +26,7 @@ class DequeDinamica:
             self.inicio = newest            
 
     def insere_final_deque(self, valor):
+        '''Insere um valor no final da Deque'''
         newest = Node(valor)
         if self.deque_e_vazia():
             self.inicio = self.fim = newest ## Caso seja o primeiro valor inserido, define fim e inicio como newest
@@ -35,28 +36,31 @@ class DequeDinamica:
             self.fim = newest              
 
     def remove_inicio_deque(self):
+        '''Remove primeiro valor da Deque'''
         if self.deque_e_vazia():
             raise IndexError("Deque está vazio!")
         valor = self.inicio.valor            
         if self.inicio == self.fim:          
-            self.inicio = self.fim = None ## Caso haja apenas um único valor, a lista se torna vazia
+            self.inicio = self.fim = None ## Caso haja apenas um único valor, a deque se torna vazia
         else:
             self.inicio = self.inicio.proximo  ## Caso contrario, remove do inicio e define o próximo como inicio
             self.inicio.anterior = None        
         return valor
 
     def remove_final_deque(self):
+        '''Remove ultimo valor da Deque'''
         if self.deque_e_vazia():
             raise IndexError("Deque está vazio!")
         valor = self.fim.valor            
         if self.inicio == self.fim:          
-            self.inicio = self.fim = None ## Caso haja apenas um único valor, a lista se torna vazia
+            self.inicio = self.fim = None ## Caso haja apenas um único valor, a deque se torna vazia
         else:
             self.fim = self.fim.anterior ## Caso contrario, remove do final e define o anterior como final
             self.fim.proximo = None          
         return valor
 
     def imprimir(self):
+        '''Imprime os valores da deque'''
         if self.deque_e_vazia():
             print("Deque está vazio!") ## Caso a deque esteja vazia, imprime uma mesagem
             return
