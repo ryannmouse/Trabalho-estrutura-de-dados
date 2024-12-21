@@ -65,11 +65,11 @@ class StaticCircularQueue:
   def _str_(self):
     '''Representação em string da fila'''
     arr = ''
-    start = self._tail._next
-    for i in range(self._len):
-      arr += str(start._element) + ', '
-      start = start._next
-    return '<' + arr + '<'
+    start = self._tail._next               # começa na cabeça da fila
+    for i in range(self._len):             
+      arr += str(start._element) + ', '    # adiciona elementos à string
+      start = start._next                  # avança para o próximo nó
+    return '<' + arr + '<'                 # retorna a string formatada
 
 ######################
 
