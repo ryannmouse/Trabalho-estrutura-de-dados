@@ -2,7 +2,7 @@ from questao_2 import PilhaArray
 
 # Validador de expressões matemáticas
 
-def valida_expressao(expressao):
+def valida_expressao(expressao): # O(n)
     '''Verifica se a expressão matemática é válida'''
     pilha = PilhaArray()  # Inicializa uma pilha vazia
     for caractere in expressao:
