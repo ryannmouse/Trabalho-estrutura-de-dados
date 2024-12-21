@@ -69,3 +69,40 @@ class DequeDinamica:
             print(atual.valor, end=" ") ## Caso contrario, imprime todos os valores da lista
             atual = atual.proximo
         print()
+
+
+###### TESTE ######
+
+if __name__ == "__main__":
+    deque = DequeDinamica()
+    print("Deque está vazio:", deque.deque_e_vazia())  # Deve retornar True
+    print()
+    
+    print("Inserindo elementos no inicio da Deque...")
+    deque.insere_inicio_deque(10)  # Inserindo o primeiro elemento
+    deque.insere_inicio_deque(20)  # Adicionando no inicio
+    deque.insere_inicio_deque(30)  # Adicionando no inicio
+    deque.imprimir()  # Imprime a lista atual
+    print()
+    
+    print("Inserindo elementos no final da Deque...")
+    deque.insere_final_deque(40)  # Adicionando no final
+    deque.insere_final_deque(50)  # Adicionando no final
+    deque.insere_final_deque(60)  # Adicionando no final
+    deque.imprimir()  # Imprime a lista atual
+    print()
+    
+    print("Removendo elementos do inicio da Deque...")
+    deque.remove_inicio_deque()  # Removendo do inicio
+    deque.remove_inicio_deque()  # Removendo do inicio
+    deque.imprimir()  # Imprime a lista atual
+    print()
+    
+    print("Removendo elementos do final da Deque...")
+    deque.remove_final_deque()  # Removendo do final
+    deque.remove_final_deque()  # Removendo do final
+    deque.imprimir()  # Imprime a lista atual
+    print()
+    
+    print("Deque está vazio:", deque.deque_e_vazia())  # Deve retornar True
+    print()
