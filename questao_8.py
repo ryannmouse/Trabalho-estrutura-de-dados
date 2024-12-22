@@ -1,3 +1,7 @@
+## Questão 8
+
+# define um novo tipo de exceção para o TAD pilha
+
 class Node:
     '''Node para uma lista duplamente encadeada.'''
 
