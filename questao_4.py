@@ -1,4 +1,4 @@
-from questao_2 import PilhaArray ## Importa a Pilha Estática do arquivo Pi.py
+from questao_2 import PilhaArray
 
 # Validador de expressões matemáticas
 

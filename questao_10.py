@@ -1,5 +1,3 @@
-## Questão 10
-
 class Node:
     
     def __init__(self, valor):
