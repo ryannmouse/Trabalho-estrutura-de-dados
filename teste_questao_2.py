@@ -1,5 +1,5 @@
 ## Questão 4 
-from questao_2 import PilhaArray
+from pilha_estatica import PilhaArray
 import time
 ## Questão 4
 # p, i = PilhaArray().pares_e_impares(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)

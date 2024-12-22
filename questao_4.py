@@ -1,4 +1,4 @@
-from questao_2 import PilhaArray
+from pilha_estatica import PilhaArray
 
 # Validador de expressões matemáticas
 
