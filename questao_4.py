@@ -1,10 +1,10 @@
-from questao_2 import PilhaArray
+from pilha_estatica import PilhaArray ## Importa a classe PilhaArray do arquivo pilha_estatica.py	
 
 # Validador de expressões matemáticas
 
 def valida_expressao(expressao): # O(n)
     '''Verifica se a expressão matemática é válida'''
-    pilha = PilhaArray()  # Inicializa uma pilha vazia
+    pilha = PilhaArray() # Inicializa uma pilha vazia
     for caractere in expressao:
         if caractere in '({[':
             pilha.push(caractere)   # Empilha os caracteres de abertura     
@@ -20,7 +20,7 @@ def valida_expressao(expressao): # O(n)
     return pilha.esta_vazia() # Se a pilha terminar vazia, a expressão é válida
 
 def main():
-    expressao = input('Digite uma expressão matemática: ')
+    expressao = input('Digite uma expressão matemática: ')  ## Main para garantir que será rodado somente neste arquivo
     if valida_expressao(expressao):
         print('Expressão válida!')
     else:
