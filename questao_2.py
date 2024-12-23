@@ -96,3 +96,25 @@ class PilhaDinamica:
             else:
                 impares.push(i)  # Adiciona número ímpar na pilha de ímpares
         return pares, impares  # Retorna as duas pilhas
+    
+    
+def pedir_numero():
+    '''Pede um número inteiro ao usuário'''
+    numeros = []
+    while True:
+        try:
+            numero = int(input('Digite um número inteiro: '))
+            numeros.append(numero)
+            if numero == 0:
+                break
+        except ValueError:
+            print('Entrada inválida. Tente novamente.')
+          
+    return numeros
+
+if __name__ == '__main__':
+    pares, impares = PilhaDinamica().pares_e_impares(pedir_numero())
+    print('Pilha de pares:')
+    pares.imprimir()
+    print('Pilha de ímpares:')
+    impares.imprimir()
